@@ -5,5 +5,8 @@
   {modules, []},
   {registered, []},
   {mod, {'{{appid}}_app', []}},
-  {env, []},
+  {env, [
+		{ip, "0.0.0.0"},
+		{port, 8080}
+		]},
   {applications, [kernel, stdlib, crypto]}]}.

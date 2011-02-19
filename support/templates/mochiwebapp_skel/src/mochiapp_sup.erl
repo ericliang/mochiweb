@@ -47,10 +47,22 @@ init([]) ->
     {ok,
      {Strategy, lists:flatten(Processes)}}.
 
-web_specs(Mod, Port) ->
-    WebConfig = [{ip, {0,0,0,0}},
+web_specs(Mod, DefaultPort) ->
+	Ip = get_app_env( ip, {0,0,0,0} ),
+	Port = get_app_env( port, DefaultPort ),
+
+    WebConfig = [{ip, Ip},
                  {port, Port},
                  {docroot, {{appid}}_deps:local_path(["priv", "www"])}],
     {Mod,
      {Mod, start, [WebConfig]},
      permanent, 5000, worker, dynamic}.
+
+
+get_app_env( Key, DefaultValue ) ->
+	case application:get_env( {{appid}}, Key ) of
+		{ok, Value } ->
+			Value;
+		_ ->
+			DefaultValue
+	end.
