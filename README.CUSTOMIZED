@@ -1,0 +1,27 @@
+The customization details are as follows:
+
+1 Change the mochiweb dependency in rebar.config.
+
+2 Changes on the template:
+  2.1 Add the ip/port configuration in .app file.
+  2.2 Add the template Makefile with rebar release command.
+
+TIPS:
+
+1 About the log
+  I have glimpsed the mochilogfile2 module, it's very simple. 
+  And for more usability and efficiency, I recommend log4erl:
+  	http://code.google.com/p/log4erl/
+
+2 How to release
+  What you need to do are:
+
+	$make
+	$make release
+	$edit the reltool.config if necessary
+	$./rebar generate
+  
+  The reltool man page: 
+	http://www.erlang.org/doc/man/reltool.html
+  The rebar manual:     
+	https://bitbucket.org/basho/rebar/wiki/Home
