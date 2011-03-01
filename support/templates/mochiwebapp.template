@@ -14,8 +14,8 @@
 {template, "mochiwebapp_skel/src/mochiapp_web.erl", "{{dest}}/src/{{appid}}_web.erl"}.
 {template, "mochiwebapp_skel/start-dev.sh", "{{dest}}/start-dev.sh"}.
 {template, "mochiwebapp_skel/priv/www/index.html", "{{dest}}/priv/www/index.html"}.
+{template, "mochiwebapp_skel/Makefile", "{{dest}}/Makefile"}.
 {file, "../../.gitignore", "{{dest}}/.gitignore"}.
-{file, "../../Makefile", "{{dest}}/Makefile"}.
 {file, "mochiwebapp_skel/rebar.config", "{{dest}}/rebar.config"}.
 {file, "../../rebar", "{{dest}}/rebar"}.
 {chmod, 8#755, "{{dest}}/rebar"}.
